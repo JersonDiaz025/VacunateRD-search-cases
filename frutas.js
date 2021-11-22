@@ -3,5 +3,6 @@ const peoples = ['Juan','Pedro','Albert','David']
 
 module.exports = {
     frutas:frutas,
+    peoples:peoples
     
 };
