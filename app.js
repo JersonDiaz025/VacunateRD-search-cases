@@ -1,16 +1,11 @@
-const http = require('http')
+const http = require('http');
 const server = http.createServer((req, resp)=>{
-    resp.end('Estoy atendiendo tu solicitud')
+    resp.end('Mostrando tu peticion v1.11');
 })
-
 const port = 2000;
-server.listen(port,()=>{
-    console.log('respuesta despachada')
-})
-
-
-
-
+server.listen(port, ()=>{
+    console.log('open server')
+});
 
 
 

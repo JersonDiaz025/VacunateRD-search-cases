@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JersonCuevasDiaz/Node.js/issues"
   },
-  "homepage": "https://github.com/JersonCuevasDiaz/Node.js#readme"
+  "homepage": "https://github.com/JersonCuevasDiaz/Node.js#readme",
+  "dependencies": {
+    "expres": "^0.0.5"
+  }
 }
