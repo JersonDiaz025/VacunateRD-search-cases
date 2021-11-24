@@ -1,6 +1,12 @@
 // http
 const http = require('http');
 
+// express
+const express = require('express');
+const app = express();
+const port = 2000;
+
+
 // const server = http.createServer((req, resp)=>{
 //     resp.end('Mostrando tu peticion v1.11');
 // })
@@ -10,29 +16,42 @@ const http = require('http');
 // });
   
 
-
-// express
-const express = require('express');
-const app = express();
-const port = 2000;
-
-
-
-// (1) solicitudes del cliente
+// (1)ruta- solicitudes del cliente
 app.get('/', (req, resp)=>{
-    resp.send('Respondiendo a tu solicitud v1.2')
+    // console.log(__dirname)
+    resp.send('Respondiendo a tu solicitud v1.2');
 });
-// (2)
-app.get('/inquietudes', (req, resp)=>{
-    resp.send('Atendiendo tus inquietudes')
-});
+// (2)ruta
+// app.get('/inquietudes', (req, resp)=>{
+//     resp.send('Atendiendo tus inquietudes');
+// });
 
+// (3)MIDDLEWARE
+// accedemos a los archivos staticos de la carpeta public
+// app.use(express.static(__dirname + '/public'));
 
+// 404
+// app.use((req, res, next)=>{
+//     res.status(404).sendFile(__dirname + "/public/404.html");
+// });
+
+// (4)ruta
 app.listen(port, ()=>{
-    console.log('iniciando la respuesta')
+    console.log('iniciando la respuesta');
 });
 
 
+
+
+
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
+// Motor de plantillas JS integrado
+// (2)ruta
+app.get('/servicios', (req, resp)=>{
+    resp.render('servicios', {titulo:'Area de servicios'})
+});
 
 
 
