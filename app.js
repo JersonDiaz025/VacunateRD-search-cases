@@ -17,10 +17,10 @@ const port = 2000;
   
 
 // (1)ruta- solicitudes del cliente
-app.get('/', (req, resp)=>{
-    // console.log(__dirname)
-    resp.send('Respondiendo a tu solicitud v1.2');
-});
+// app.get('/', (req, resp)=>{
+//     // console.log(__dirname)
+//     resp.send('Respondiendo a tu solicitud v1.2');
+// });
 // (2)ruta
 // app.get('/inquietudes', (req, resp)=>{
 //     resp.send('Atendiendo tus inquietudes');
@@ -42,15 +42,22 @@ app.listen(port, ()=>{
 
 
 
-
-
+// ejs
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 // Motor de plantillas JS integrado
-// (2)ruta
+// (2)rutas
+app.get('/', (req, resp)=>{
+    resp.render('nav', {titulo:'Navegacion'});
+});
+
+app.get('/home', (req, resp)=>{
+    resp.render('home', {titulo:'Pagina de inicio'});
+});
+
 app.get('/servicios', (req, resp)=>{
-    resp.render('servicios', {titulo:'Area de servicios'})
+    resp.render('servicios', {titulo:'Area de servicios'});
 });
 
 
