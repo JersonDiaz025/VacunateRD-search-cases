@@ -49,11 +49,15 @@ app.set('views', __dirname + '/views');
 
 // (2)rutas
 app.get('/', (req, resp)=>{
-    resp.render('index',{titulo:'Pagina de inicio'});
+    resp.render('navbar',{titulo:'Pagina de inicio'});
 });
 
 app.get('/home', (req, resp)=>{
     resp.render('home', {titulo:'Pagina de inicio'});
+});
+
+app.get('/contactos', (req, resp)=>{
+    resp.render('contactos', {titulo:'Contactanos por esta via'})
 });
 
 app.get('/servicios', (req, resp)=>{
