@@ -40,16 +40,16 @@ app.listen(port, ()=>{
     console.log('iniciando la respuesta');
 });
 
-
-
+// ----------------------------------------------------------------------------
+// Motor de plantillas JS integrado
 // ejs
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-// Motor de plantillas JS integrado
+
 // (2)rutas
 app.get('/', (req, resp)=>{
-    resp.render('nav', {titulo:'Navegacion'});
+    resp.render('index',{titulo:'Pagina de inicio'});
 });
 
 app.get('/home', (req, resp)=>{
