@@ -40,30 +40,33 @@ app.listen(port, ()=>{
     console.log('iniciando la respuesta');
 });
 
+
 // ----------------------------------------------------------------------------
 // Motor de plantillas JS integrado
 // ejs
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-
 // (2)rutas
 app.get('/', (req, resp)=>{
     resp.render('navbar',{titulo:'Pagina de inicio'});
 });
 
-app.get('/home', (req, resp)=>{
-    resp.render('home', {titulo:'Pagina de inicio'});
+app.get('/navbar', (req, resp)=>{
+    resp.render('navbar', {titulo:'Pagina de inicio'});
 });
 
 app.get('/contactos', (req, resp)=>{
     resp.render('contactos', {titulo:'Contactanos por esta via'})
 });
 
-app.get('/servicios', (req, resp)=>{
-    resp.render('servicios', {titulo:'Area de servicios'});
+app.get('/nosotros', (req, resp)=>{
+    resp.render('nosotros', {titulo:'Informacion sobre nosotros'});
 });
 
+app.use((req, resp, next)=>{
+    resp.status(404).render('404', {titulo:'Error 404 pagina no encontrada'});
+});
 
 
 
