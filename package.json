@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "postinstall": "npm install",
     "start": "node app"
   },
   "repository": {
