@@ -6,6 +6,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// fetch
+// const fetch = require('node-fetch');
+
 
 // const server = http.createServer((req, resp)=>{
 //     resp.end('Mostrando tu peticion v1.11');
@@ -15,7 +18,6 @@ const port = process.env.PORT || 3000;
 //     console.log('open server')
 // });
   
-
 // (1)ruta- solicitudes del cliente
 // app.get('/', (req, resp)=>{
 //     // console.log(__dirname)
@@ -35,15 +37,16 @@ const port = process.env.PORT || 3000;
 //     res.status(404).sendFile(__dirname + "/public/404.html");
 // });
 
+
+
 // (4)ruta
 app.listen(port, ()=>{
-    console.log('iniciando la respuesta');
+    console.log('starting server');
 });
 
 
 // ----------------------------------------------------------------------------
-// Motor de plantillas JS integrado
-// ejs
+// Motor de plantillas JS integrado ejs
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
