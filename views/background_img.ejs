@@ -1,7 +1,10 @@
 <%-include('template/headers', {titlePage:'Home'});%>
 <%-include('head_help');%>
-    <div class="d-flex flex-row align-items-center">
-        <h1 class="text-primary fw-bolder offset-md-1"><%=titulo%></h1> 
-        <img src="https://image.freepik.com/vector-gratis/dibujos-animados-lindo-coronavirus-covid-19-mujer-ma-distanciamiento-social_39961-1900.jpg" class="rounded mx-auto d-block" alt="...">
+    <div class="d-flex offset-md-1">
+        <h1 class="text-primary fw-bolder d-flex align-items-center flex-wrap"><%=titulo%></h1>
+        <div class="img-fluid"> 
+            <img src="https://www.eluniverso.com/resizer/1WOlTPDGoQe7LH1b1tUsfWVIonw=/882x670/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/TRE3JYYM6VGLHEKAVBCLRXGIKA.jpg" class="img-thumbnail rounded float-end" alt="...">
+        </div>
     </div>
+   <%-include('button');%>
 </body>
