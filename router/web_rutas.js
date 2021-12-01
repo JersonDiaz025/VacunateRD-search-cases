@@ -3,7 +3,7 @@ const router = express.Router();
 
 // pagina con ruta principal
 router.get('/', (req, resp)=>{
-    resp.render('background_img',{titulo:'Information about COVID-19'});
+    resp.render('home',{titulo:'El COVID-19'});
 });
 
 router.get('/navbar', (req, resp)=>{

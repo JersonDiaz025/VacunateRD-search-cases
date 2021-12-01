@@ -4,7 +4,7 @@ const http = require('http');
 // express
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 // fetch
 // const fetch = require('node-fetch');
@@ -49,6 +49,9 @@ app.listen(port, ()=>{
 // Motor de plantillas JS integrado ejs
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
+
+// configuracion de ruta publica
+app.use('/public', express.static('public'));
 
 // (2)rutas web
 app.use('/', require('./router/web_rutas'));
