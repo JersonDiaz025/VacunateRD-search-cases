@@ -17,7 +17,7 @@ const port = process.env.PORT || 4000;
 // server.listen(port, ()=>{
 //     console.log('open server')
 // });
-  
+
 // (1)ruta- solicitudes del cliente
 // app.get('/', (req, resp)=>{
 //     // console.log(__dirname)
@@ -40,7 +40,7 @@ const port = process.env.PORT || 4000;
 
 
 // (4)ruta
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log('starting server');
 });
 
@@ -57,8 +57,8 @@ app.use('/public', express.static('public'));
 app.use('/', require('./router/web_rutas'));
 
 
-app.use((req, resp, next)=>{
-    resp.status(404).render('404', {titulo:'Error 404 pagina no encontrada'});
+app.use((req, resp, next) => {
+    resp.status(404).render('404', { titulo: 'Error 404 pagina no encontrada' });
 });
 
 

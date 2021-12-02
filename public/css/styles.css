@@ -1,13 +1,24 @@
 
-body, html{
-    height: 100%;
+body{
+    height: 100vh;
 }
 
 .image{ 
 
     background-image: url("https://cdn.pixabay.com/photo/2020/03/08/23/23/coronavirus-4914026_960_720.jpg");
     height: 100%; 
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -99;
+    position: fixed;
+}
+
+.section-center{
+    transform: translateY(40vh);
+    margin-left: 08%;
+}
+.btn1{
+    width: 20rem;
 }
