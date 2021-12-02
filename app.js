@@ -6,8 +6,55 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 4000;
 
-// fetch
-// const fetch = require('node-fetch');
+// (4)---------ruta
+
+// ----------------------------------------------------------------------------
+// Motor de plantillas JS integrado ejs
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
+// configuracion de ruta publica
+app.use('/public', express.static('public'));
+
+// (2)rutas web
+app.use('/', require('./router/web_rutas'));
+
+
+app.use((req, resp, next) => {
+    resp.status(404).render('404', { titulo: 'Error 404 pagina no encontrada' });
+});
+
+
+// API COVID-19
+const axios = require('axios').default;
+async function api_covid(){
+    try {
+        let API = await axios.get(`https://covid-19.dataflowkit.com/v1/florida`);
+        let response = API.data
+        console.log(response)
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+api_covid();
+
+
+
+app.listen(port, () => {
+    console.log(`Server started on port: ${port}`);
+});
+
+
+
+
+
+
+
+
+
+
 
 
 // const server = http.createServer((req, resp)=>{
@@ -36,56 +83,6 @@ const port = process.env.PORT || 4000;
 // app.use((req, res, next)=>{
 //     res.status(404).sendFile(__dirname + "/public/404.html");
 // });
-
-
-
-// (4)ruta
-app.listen(port, () => {
-    console.log('starting server');
-});
-
-
-// ----------------------------------------------------------------------------
-// Motor de plantillas JS integrado ejs
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
-
-// configuracion de ruta publica
-app.use('/public', express.static('public'));
-
-// (2)rutas web
-app.use('/', require('./router/web_rutas'));
-
-
-app.use((req, resp, next) => {
-    resp.status(404).render('404', { titulo: 'Error 404 pagina no encontrada' });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const {frutas,peoples} = require('./frutas');
 

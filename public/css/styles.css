@@ -22,3 +22,27 @@ body{
 .btn1{
     width: 20rem;
 }
+
+.container{
+    display:flex;
+    width:30%; 
+    margin-top: 70px;
+    border-radius: 10px;
+}
+.target{ 
+    margin:16px auto;
+    max-width: 400px;
+    width: 60vw;
+    padding: 10px;
+   
+}
+.color{
+    color:rgb(228, 228, 241);
+    background-color: rgb(99, 99, 91);
+}
+.info{
+    text-align:start;
+}
+.color1{
+    background:linear-gradient(90deg, rgb(233, 86, 140) 5%, rgb(178, 61, 242) 15%, rgb(31, 199, 199) 30%);
+}

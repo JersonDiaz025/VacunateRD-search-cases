@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+
 //main routes
 router.get('/', (req, resp)=>{
     resp.render('home',{titulo:'Information on COVID-19'});
@@ -14,5 +15,8 @@ router.get('/contacts', (req, resp)=>{
     resp.render('contacts', {titulo:'Contactanos por esta via'});
 });
 
+router.get('/card_info', (req, resp)=>{
+    resp.render('card_info');
+});
 
 module.exports = router;
