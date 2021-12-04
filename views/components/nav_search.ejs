@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-dark bg-dark nav1">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white">Search for COVID-19 information</a>
+    <img class="hamberguer" src="/public/images/hamberguer.svg" alt="" />
+    <form class="d-flex style-h" action="/inputSearch" method="post">
+      <a
+        href="/"
+        class="btn btn-outline-success text-white nav-link me-2 style-h-item"
+        >Home</a
+      >
+      <input
+        id="data"
+        name="data"
+        class="form-contro style-h-item"
+        type="text"
+        placeholder="country"
+      />
+      <button
+        class="btn btn-outline-success text-white inputSearch ms-1 style-h-item"
+        type="submit"
+      >
+        Search
+      </button>
+      <span class="btn btn-outline-danger style-h-item style-h-close">X</span>
+    </form>
+  </div>
+</nav>

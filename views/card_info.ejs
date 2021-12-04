@@ -1,18 +1,39 @@
-<%-include('template/headers', {titlePage:' '})%>
-<%-include('nav_search');%>
-<div class="container color">
-    <div class="target ">
-        <!-- <span class="fw-bolder">City</span> -->
-        <ul class="info">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('template/head_import',{titlePage:'info'});%>
+</head>
+<body>
+    <%-include('components/nav_search');%>
+    <div class="container color">
+        <div class="tarjet">
+            <ul class="info">
+                <li>Casos activos:
+                    <%=data.activeCases%>
+                </li>
+                <li>Pais:
+                    <%=data.country%>
+                </li>
+                <li>Ultima actualizacion:
+                    <%=data.lastUpdate%>
+                </li>
+                <li>Nuevos casos:
+                    <%=data.newCases%>
+                </li>
+                <li>Nuevas defunsiones:
+                    <%=data.newDeaths%>
+                </li>
+                <li>Casos totales:
+                    <%=data.totalCases%>
+                </li>
+                <li>Total defusiones:
+                    <%=data.totalDeaths%>
+                </li>
+                <li>Recuperados:
+                    <%=data.totalRecovered%>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+</body>
+</html>

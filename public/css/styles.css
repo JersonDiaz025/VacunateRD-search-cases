@@ -1,48 +1,99 @@
-
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
 
-.image{ 
+.image {
+  background-image: url("https://cdn.pixabay.com/photo/2020/03/08/23/23/coronavirus-4914026_960_720.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -99;
+  position: fixed;
+}
 
-    background-image: url("https://cdn.pixabay.com/photo/2020/03/08/23/23/coronavirus-4914026_960_720.jpg");
-    height: 100%; 
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -99;
+.section-center {
+  transform: translateY(40vh);
+  margin-left: 08%;
+}
+.btn1 {
+  width: 20rem;
+}
+
+.container {
+  display: flex;
+  width: 30vw;
+  margin-top: 70px;
+  border-radius: 10px;
+}
+.target {
+  margin: 16px auto;
+  max-width: 400px;
+  width: 60vw;
+  padding: 10px;
+}
+
+.color {
+  color: rgb(228, 228, 241);
+  background-color: rgb(99, 99, 91);
+}
+
+.info {
+  text-align: start;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0.6rem 1.8rem;
+}
+.style-h-close {
+  display: none;
+}
+.hamberguer {
+  display: none;
+}
+
+.hamberguer:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 545px) {
+  .container {
+    width: 90vw;
+  }
+  .nav1 {
+    max-width: auto;
+  }
+  .style-h {
+    display: none !important;
     position: fixed;
-}
-
-.section-center{
-    transform: translateY(40vh);
-    margin-left: 08%;
-}
-.btn1{
-    width: 20rem;
-}
-
-.container{
-    display:flex;
-    width:30%; 
-    margin-top: 70px;
-    border-radius: 10px;
-}
-.target{ 
-    margin:16px auto;
-    max-width: 400px;
+    z-index: 10;
+    background-color: var(--bs-body-color);
+    flex-direction: column;
+    display: flex;
+    height: 90vh;
     width: 60vw;
-    padding: 10px;
-   
-}
-.color{
-    color:rgb(228, 228, 241);
-    background-color: rgb(99, 99, 91);
-}
-.info{
-    text-align:start;
-}
-.color1{
-    background:linear-gradient(90deg, rgb(233, 86, 140) 5%, rgb(178, 61, 242) 15%, rgb(31, 199, 199) 30%);
+    /* justify-content: center; */
+    top: 0px;
+    left: 0;
+    padding: 2rem;
+  }
+  .style-h-item {
+    z-index: 11;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .style-h-close {
+    position: absolute;
+    margin-left: auto;
+    font-size: 13px;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    bottom: 10px;
+    right: 10px;
+    display: block;
+  }
+  .hamberguer {
+    display: block;
+  }
 }

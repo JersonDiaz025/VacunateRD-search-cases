@@ -1,5 +1,11 @@
-<%-include('template/headers', {titlePage:'Home'});%>
-<%-include('head_help');%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('template/head_import', {titlePage:'Home'});%>
+</head>
+<body>
+    <%-include('components/navbar');%>
     <div class="image"></div>
     <div class="section-center d-flex flex-column">
         <div style="width:310px;">
@@ -12,3 +18,4 @@
         </div>
     </div>
 </body>
+</html>
