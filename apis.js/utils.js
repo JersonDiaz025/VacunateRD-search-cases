@@ -1,8 +1,8 @@
 const axios = require('axios').default;
 
-async function api_covid() {
+async function api_covid(country) {
     try {
-        let API = await axios.get(`https://covid-19.dataflowkit.com/v1/spain`);
+        let API = await axios.get(`https://covid-19.dataflowkit.com/v1/${country}`);
         const obj = {
             activeCases: API.data['Active Cases_text'] ? API.data['Active Cases_text']: "0",
             country: API.data['Country_text'] ? API.data['Country_text']:'0',

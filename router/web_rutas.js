@@ -20,32 +20,14 @@ router.get("/card_info", (req, resp) => {
 });
 
 // route of inputSearch
-router.post("/inputSearch", async (req, resp) => {
-  const values = await api_covid();
-  console.log(req.body);
-  // resp.render('card_info', {data:values});
-  resp.json({ data: req.body });
+router.post("/inputSearch", async (req, resp)=> {
+  const result = req.body.country;
+  if(req.body.country){
+    const values = await api_covid(result);
+    resp.render('card_info', {data:values})
+  }else{
+    resp.redirect('card_info');
+  }
 });
-
-// const algo = {
-//     headers = {
-
-//     },
-//     cors={
-
-//     },
-//     body={
-
-//     },
-//     params ={
-
-//     },
-//     method ={
-
-//     },
-//     content-type={
-
-//     }
-// }
 
 module.exports = router;
