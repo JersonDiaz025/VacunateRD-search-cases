@@ -14,7 +14,7 @@ async function api_covid(country) {
             totalRecovered: API.data['Total Recovered_text'] ? API.data['Total Recovered_text']:'0'
         }
         return obj
-
+        
     } catch (error) {
         console.log(error.message);
     }

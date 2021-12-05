@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const api_covid = require("../apis.js/utils");
+const api_covid = require("../utils/utils");
 
 //main routes
 router.get("/", (req, resp) => {
